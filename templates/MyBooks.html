@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="static\navbar.css" rel="stylesheet">
+<body>
+  <ul>
+    <li style="float:left"><a class="active">User's Dashboard</a></li>
+    <li><a href="/">Logout</a></li>
+      <li><a href="/Stats">Stats</a></li>
+      <li><a href="/MyBooks">MyBooks</a></li>
+      <li><a href="/home">Home</a></li> 
+</ul>
+    <h1>Your Books</h1>
+
+    <form id="demo" name ="demo" action="/MyBooks" method="POST">
+      <input type="text" name="searchKey" placeholder="search">
+      <input type="submit" value="submit">
+    </form>
+
+</body>
+</html>

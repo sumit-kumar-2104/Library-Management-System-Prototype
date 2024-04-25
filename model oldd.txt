@@ -1,0 +1,29 @@
+
+    class Books(db.Model):
+    __tablename__ = "books"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, unique=True)
+    section_id = db.Column(db.Integer, db.ForeignKey("sections.id"), nullable=False)
+    name = db.Column(db.String, nullable=False)
+    content = db.Column(db.Text)
+    author = db.Column(db.String)
+    cover = db.Column(db.String)
+    date_issued = db.Column(db.Date)
+    return_date = db.Column(db.Date)
+    # Define relationship with sections
+    section = db.relationship("Sections", back_populates="books")
+    # Define relationship with book_requests
+    book_requests = db.relationship("BookRequests", back_populates="book")
+    # Define relationship with access_control
+    access_controls = db.relationship("AccessControl", back_populates="book")
+
+class BookRequests(db.Model):
+    __tablename__ = "book_requests"
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, unique=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
+    book_id = db.Column(db.Integer, db.ForeignKey("books.id"), nullable=False)
+    request_date = db.Column(db.Date)
+    status = db.Column(db.String)  # You can use an Enum here for more structured status values
+    # Define relationship with users
+    user = db.relationship("Users", back_populates="book_requests")
+    # Define relationship with books
+    book = db.relationship("Books", back_populates="book_requests")

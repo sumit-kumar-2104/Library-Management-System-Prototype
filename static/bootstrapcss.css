@@ -1,0 +1,10 @@
+[class*=col] {
+    background-color: rgb(5, 166, 112);
+    font-weight: bold;
+    color: aliceblue;
+    box-sizing: border-box;
+    border: 2px solid white;
+    font-size: 14px; /* Adjust font size as needed */
+    max-width: 200px; /* Set a specific width for the elements */
+    overflow: hidden;
+}

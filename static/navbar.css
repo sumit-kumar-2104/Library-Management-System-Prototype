@@ -1,0 +1,48 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    border-bottom: 1px solid #bbb;
+  }
+  
+  li {
+    float: right;
+    position: relative;
+    border: 1px solid #bbb; /* Add border right to each list item */
+  }
+  
+  li:last-child {
+    border-right: none; /* Remove border right from the last list item */
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+
+  li a:hover:not(.active)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    border-bottom: 2px solid rgb(197, 23, 23);
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }
+
+  img{
+      width: 20%;
+  }
